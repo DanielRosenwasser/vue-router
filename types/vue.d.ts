@@ -7,14 +7,14 @@ import VueRouter from "./index";
 import { Route, RawLocation, NavigationGuard } from "./index";
 
 declare module "vue/types/vue" {
-  interface Vue {
+  interface Vue<Data, Methods, Computed, Props> {
     $router: VueRouter;
     $route: Route;
   }
 }
 
 declare module "vue/types/options" {
-  interface ComponentOptions<V extends Vue> {
+  interface ComponentOptions<Data, Methods, Computed, Props> {
     router?: VueRouter;
     beforeRouteEnter?: NavigationGuard;
     beforeRouteLeave?: NavigationGuard;
